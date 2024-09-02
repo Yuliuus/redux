@@ -10,15 +10,26 @@ const slice = createSlice({
     },
     reducers: {
         changeTextFilter(state, action) {
-            const { field, value } = action.payload; // Destructure field and value
-            state[field] = value; // Dynamically update the correct filter
+            const { field, value } = action.payload;
+            state[field] = value;
         },
     },
 });
 
-// export const selectFilter = state => {
-//     return state.filters;
-// }
+
+
+export const selectFilter = (state) => state.filters[name];
+
+export const selectName = (state) => state.filters.name;
+
+export const selectUsername = (state) => state.filters.username;
+
+export const selectEmail = (state) => state.filters.email;
+
+export const selectPhone = (state) => state.filters.phone;
+
+
+
 
 export const { changeTextFilter } = slice.actions;
 

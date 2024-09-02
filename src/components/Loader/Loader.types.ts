@@ -1,0 +1,3 @@
+type LoadingProps = {
+  children: string;
+};

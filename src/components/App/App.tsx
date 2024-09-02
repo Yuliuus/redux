@@ -2,14 +2,16 @@ import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchUsers } from "../../redux/contactsOps";
+import { AppDispatch } from "../../redux/store";
+import { selectLoading, selectError } from "../../redux/contactsSlice";
 import Loader from "../Loader/Loader";
 import Error from "../Error/Error";
 import UserTable from "../UserTable/UserTable";
 
 function App() {
-  const dispatch = useDispatch();
-  const loading = useSelector((state) => state.contacts.loading);
-  const weHaveError = useSelector((state) => state.contacts.error);
+  const dispatch = useDispatch<AppDispatch>();
+  const loading = useSelector(selectLoading);
+  const weHaveError = useSelector(selectError);
 
   useEffect(() => {
     const operation = fetchUsers();

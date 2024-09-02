@@ -1,0 +1,3 @@
+type ErrorProps = {
+  children: string;
+};

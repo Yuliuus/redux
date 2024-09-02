@@ -1,14 +1,12 @@
 .table {
-  margin: 20px auto;
-  width: 80%;
+  margin: 10px auto;
+  width: 100%;
   border-collapse: collapse;
   background-color: #ffffff;
   text-align: center;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(26, 25, 25, 0.3);
-  overflow: hidden;
 }
-
 .thead {
   color: #ffffff;
   background-color: #42434e;
@@ -25,12 +23,33 @@
   transition: background-color 0.3s;
 }
 
-.tr:hover {
-  background-color: #e0e0e0;
-}
-
 td {
   padding: 10px;
-  border: 1px solid #ddd; /* Add subtle borders for better separation */
-  font-family: "Arial", sans-serif; /* Consistent font */
+  border: 1px solid #ddd;
+}
+
+.scroll {
+  overflow: scroll;
+  height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .table {
+    margin: 15px auto;
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .table {
+    margin: 20px auto;
+  }
+
+  .tr:hover {
+    background-color: #e0e0e0;
+  }
+
+  .scroll {
+    overflow: hidden;
+  }
 }

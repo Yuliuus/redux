@@ -1,20 +1,26 @@
 import { useSelector } from "react-redux";
 import UserItem from "../UserItem/UserItem";
 import SearchBar from "../SearchBar/SearchBar";
+import { selectUser } from "../../redux/contactsSlice";
+import {
+  selectName,
+  selectUsername,
+  selectEmail,
+  selectPhone,
+} from "../../redux/filtersSlice";
+import { User } from "../UserItem/UserItem.types";
 import css from "./UserTable.module.css";
 
-// import selectFilter from "../../redux/filtersSlice";
-
 export default function UserTable() {
-  const users = useSelector((state) => state.contacts.items);
+  const users = useSelector(selectUser) as User[];
 
-  const filterName = useSelector((state) => state.filters.name);
-  const filterUsername = useSelector((state) => state.filters.username);
-  const filterEmail = useSelector((state) => state.filters.email);
-  const filterPhone = useSelector((state) => state.filters.phone);
+  const filterName = useSelector(selectName);
+  const filterUsername = useSelector(selectUsername);
+  const filterEmail = useSelector(selectEmail);
+  const filterPhone = useSelector(selectPhone);
 
   const visibleUsers = users.filter(
-    (user) =>
+    (user: User) =>
       user.name.toLowerCase().includes(filterName.toLowerCase()) &&
       user.username.toLowerCase().includes(filterUsername.toLowerCase()) &&
       user.email.toLowerCase().includes(filterEmail.toLowerCase()) &&
@@ -22,7 +28,7 @@ export default function UserTable() {
   );
 
   return (
-    <>
+    <div className={css.scroll}>
       <table className={css.table}>
         <thead className={css.thead}>
           <SearchBar />
@@ -41,6 +47,6 @@ export default function UserTable() {
           ))}
         </tbody>
       </table>
-    </>
+    </div>
   );
 }

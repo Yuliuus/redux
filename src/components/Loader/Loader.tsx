@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import css from "./Loader.module.css";
 
-export default function Loader({ children }) {
+export default function Loader({ children }: LoadingProps) {
   const [dots, setDots] = useState("");
 
   useEffect(() => {
