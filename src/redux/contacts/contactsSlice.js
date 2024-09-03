@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchUsers } from "./contactsOps";
+import { fetchUsers } from "../contacts/contactsOps";
 
 const slice = createSlice({
     name: "users",
@@ -24,11 +24,5 @@ const slice = createSlice({
             })
     }
 });
-
-export const selectUser = (state) => state.contacts.items;
-
-export const selectLoading = (state) => state.contacts.loading;
-
-export const selectError = (state) => state.contacts.error;
 
 export default slice.reducer;

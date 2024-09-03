@@ -13,11 +13,9 @@ export default function Loader({ children }: LoadingProps) {
   }, []);
 
   return (
-    <p className={css.text}>
-      <b>
-        {children}
-        {dots}
-      </b>
-    </p>
+    <h2 className={css.text}>
+      {children}
+      {dots}
+    </h2>
   );
 }

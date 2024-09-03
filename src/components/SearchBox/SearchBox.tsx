@@ -1,6 +1,7 @@
 import css from "../SearchBar/SearchBar.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { changeTextFilter, selectFilter } from "../../redux/filtersSlice";
+import { selectFilter } from "../../redux/filters/filtersSelectors";
+import { changeTextFilter } from "../../redux/filters/filtersSlice";
 import { Field } from "formik";
 
 type SearchBoxProps = {

@@ -1,9 +1,9 @@
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fetchUsers } from "../../redux/contactsOps";
+import { fetchUsers } from "../../redux/contacts/contactsOps";
 import { AppDispatch } from "../../redux/store";
-import { selectLoading, selectError } from "../../redux/contactsSlice";
+import { selectLoading, selectError } from "../../redux/contacts/contactsSelectors";
 import Loader from "../Loader/Loader";
 import Error from "../Error/Error";
 import UserTable from "../UserTable/UserTable";

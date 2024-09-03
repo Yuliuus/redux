@@ -6,7 +6,6 @@ axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com';
 export const fetchUsers = createAsyncThunk("users/getAll", async (_, thunkAPI) => {
     try {
         const response = await axios.get("/users");
-        console.log("function to fetchusers works!");
         return response.data;
     } catch (error) {
         return thunkAPI.rejectWithValue(error.message)
