@@ -1,9 +1,9 @@
 export type User = {
   id?: string;
-  name: String;
-  username: String;
-  email: String;
-  phone: String;
+  name: string;
+  username: string;
+  email: string;
+  phone: string;
 };
 
 export type UserItemProps = {

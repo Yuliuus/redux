@@ -1,6 +1,6 @@
-import css from "./UserItem.module.css";
 import { phoneFilter } from "../../helpers/phoneFilter";
 import { UserItemProps } from "../UserItem/UserItem.types";
+import css from "../UserItem/UserItem.module.css";
 
 export default function UserItem({ user }: UserItemProps) {
   const normalizedPhone = phoneFilter(user.phone);
